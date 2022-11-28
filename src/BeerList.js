@@ -1,5 +1,9 @@
 import React,{Component} from "react";
 import { BeerDetails } from "./DetailScreen";
+import { DisplaySingleTwo } from "./DisplaySingleTwo";
+
+const beerNum= 0;
+const beerStart = <DisplaySingleTwo id={beerNum} />;
 
 export class BeerList extends Component{
 constructor(props){
@@ -28,11 +32,13 @@ render(){
   return(
     <>
     <h1>List of beers: </h1>
+    <div id="beerContainer"></div>
     <ul>
-      {items.map(item =>(<li key={item.id} style={{width:"500px", border:"1px solid black", float:"left", margin:"10px"}}>
+      {items.map(item =>(<li key={item.id} style={{width:"500px",borderRadius:"25px" , border:"1px solid black", float:"left", margin:"10px"}}>
         <img src={item.image_url} style={{height:"100px", marginLeft:"50%" }}/>
-        <button onClick={()=>{ console.log(item.name); }}>Click</button>
+        <button onClick={()=>{ console.log(item.name); }}>LOG NAME</button>
         <button onClick={()=>{ BeerDetails(item.image_url,item.name,item.abv,item.description,item.ingredients.hops,item.ingredients.malt, item.method) }}>Click</button>
+        <button onClick={()=>{ console.log("told you not to click this...") }}>dont click this</button>
         <br/>
         <b>Name: {item.name}</b>
         <br/>

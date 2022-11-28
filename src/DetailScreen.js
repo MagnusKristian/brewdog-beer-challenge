@@ -44,25 +44,25 @@ export function BeerDetails(imageUrl,name,abv,description,hops,malts,methods){
         <br/>
         <b>List of hops: </b>
         <ul>
-          {hops.forEach(hop => {
-            <li>{console.log(hop.name)}</li>
-          })}
-        </ul>
+        {hops.forEach(hop => {
+          <li>{console.log("HOP: " +hop.name)}</li>
+        })}
+      </ul>
         <br/>
         <b>List of malts: </b>
         <ul>
-          {malts.forEach(malt => {
-            <li>{console.log(malt.name)}</li>
-          })}
-        </ul>
+        {malts.forEach(malt => {
+          <li>{console.log("MALT: "+malt.name)}</li>
+        })}
+      </ul>
 
         <br/>
         <b>List of methods: </b>
         <ul>
-          <li>{console.log("balle")}</li>
-          <li>{console.log(methods.mash_temp[0].temp.value + " "+ methods.mash_temp[0].temp.unit)}</li>
-          <li>{console.log(methods.twist)}</li>
-        </ul>
+        <li>Fermentation: {console.log("FERMENTATION: "+methods.fermentation.temp.value)} {console.log(" -TEMP: "+methods.fermentation.temp.unit)}</li>
+        <li>mash_temp: {console.log("MASH: "+methods.mash_temp[0].temp.value)} {console.log(" -TEMP: "+methods.mash_temp[0].temp.unit)}</li>
+        <li>twist: {console.log("TWIST: "+methods.twist)}</li>
+      </ul>
   </>
   )
 }
